@@ -31,8 +31,6 @@ ALLOWED_HOSTS = ['*']
 SITE_ID = 1
 
 
-django_heroku.settings(locals())
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -128,7 +126,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
-
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 # E-mail
 # EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.common'
@@ -147,3 +145,6 @@ SECURE_HSTS_PRELOAD = True
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 SECURE_HSTS_SECONDS = 518400
+
+
+django_heroku.settings(locals())
