@@ -1,0 +1,10 @@
+django
+gunicorn
+django-heroku
+django-taggit
+dj-database-url
+pip
+psycopg2-binary
+pytz
+setuptools
+whitenoise
