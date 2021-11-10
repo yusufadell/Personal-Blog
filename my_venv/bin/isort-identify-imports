@@ -1,0 +1,10 @@
+#!/bin/sh
+'''exec' "/home/yusuf/Documents/backend path/5-github-repos_aka_VCS/@Working_On/learning_log/ll_env/bin/python" "$0" "$@"
+' '''
+# -*- coding: utf-8 -*-
+import re
+import sys
+from isort.main import identify_imports_main
+if __name__ == '__main__':
+    sys.argv[0] = re.sub(r'(-script\.pyw|\.exe)?$', '', sys.argv[0])
+    sys.exit(identify_imports_main())
