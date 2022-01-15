@@ -3,9 +3,19 @@
 <html>
 
 <head>
-    <title>{% block title %}{% endblock %}</title>
+    <title>{% block title %}{% endblock %} Yusuf Adel Blog | Backend Developer</title>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/androidstudio.min.css">
-
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no" />
+    <meta name="title" content="Yusuf Adel Blog | Backend Developer" />
+    <meta name="author" content="Yusuf Adel" />
+    <meta name="description" content="Yusuf Adel Backend Developer Blog Post" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Yusuf Adel Blog | Backend Developer" />
+    <meta property="og:description" content="Yusuf Adel Backend Developer Blog Post" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:title" content="Yusuf Adel Blog | Backend Developer" />
+    <meta property="twitter:description" content="Yusuf Adel Backend Developer Blog Post" />
     <link href="{% static 'css/blog.css' %}" rel="stylesheet">
 </head>
 
@@ -38,43 +48,7 @@
         {% endfor %}
     </ul>
 </div>
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
-<script>
-    hljs.initHighlightingOnLoad();
-
-
-    const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
-
-    function switchTheme(e) {
-        if (e.target.checked) {
-            document.documentElement.setAttribute('data-theme', 'dark');
-        } else {
-            document.documentElement.setAttribute('data-theme', 'light');
-        }
-    }
-
-    toggleSwitch.addEventListener('change', switchTheme, false);
-
-    function switchTheme(e) {
-        if (e.target.checked) {
-            document.documentElement.setAttribute('data-theme', 'dark');
-            localStorage.setItem('theme', 'dark'); //add this
-        } else {
-            document.documentElement.setAttribute('data-theme', 'light');
-            localStorage.setItem('theme', 'light'); //add this
-        }
-    }
-
-    const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
-
-    if (currentTheme) {
-        document.documentElement.setAttribute('data-theme', currentTheme);
-
-        if (currentTheme === 'dark') {
-            toggleSwitch.checked = true;
-        }
-    }
-</script>
+<script src="{% static 'js/toggle.js' %}"></script>
 </body>
 
 </html>
