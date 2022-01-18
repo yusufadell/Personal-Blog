@@ -23,7 +23,7 @@
             {% endfor %}
         </p>
         <p class="date">
-            Published {{ post.publish }} by {{ post.author }}
+            Published {{ post.publish|date }} by {{ post.author }}
         </p>
         {{ post.body|markdown|truncatewords_html:30 }}
     {% endfor %}
