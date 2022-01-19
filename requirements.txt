@@ -23,3 +23,11 @@ wrapt==1.13.3
 python-dotenv
 django-cms
 django-sekizai
+django-filer
+djangocms-link
+djangocms-file
+djangocms-picture
+djangocms-video
+djangocms-googlemap
+djangocms-snippet
+djangocms-style
