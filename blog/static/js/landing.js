@@ -596,19 +596,19 @@
                 delay: 7000,
             },
             images: [{
-                src: 'https://images.pexels.com/photos/1284296/pexels-photo-1284296.jpeg',
+                src: '../img/landing/bg-1.jpg',
                 position: 'center',
                 motion: 'down',
                 speed: 2,
                 caption: 'Untitled',
             }, {
-                src: 'https://images.pexels.com/photos/604684/pexels-photo-604684.jpeg',
+                src: '../img/landing/bg-2.jpg',
                 position: 'center',
                 motion: 'right',
                 speed: 2,
                 caption: 'Untitled',
             }, {
-                src: 'https://images.pexels.com/photos/1054202/pexels-photo-1054202.jpeg',
+                src: '../img/landing/bg-3.jpg',
                 position: 'center',
                 motion: 'left',
                 speed: 2,
