@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'menus',
     'treebeard',
     'sekizai',
+    "djangocms_text_ckeditor",
 ]
 
 MIDDLEWARE = [
@@ -70,7 +71,7 @@ ROOT_URLCONF = "mysite.urls"
 
 TEMPLATES = [
     {
-        
+
         "BACKEND": "django.template.backends.django.DjangoTemplates",
         'DIRS': ['templates'],
         "APP_DIRS": True,
@@ -148,3 +149,9 @@ X_FRAME_OPTIONS = 'SAMEORIGIN'
 CMS_TEMPLATES = [
     ('cms/home.html', 'Home page template'),
 ]
+
+CKEDITOR_SETTINGS = {
+    'language': '{{ language }}',
+    'toolbar': 'CMS',
+    'skin': 'moono-lisa',
+}
