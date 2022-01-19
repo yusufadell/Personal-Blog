@@ -21,3 +21,5 @@ typing-extensions==3.10.0.2
 whitenoise==5.3.0
 wrapt==1.13.3
 python-dotenv
+django-cms
+django-sekizai
