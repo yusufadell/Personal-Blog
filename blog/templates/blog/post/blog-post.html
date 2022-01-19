@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
           integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link type="text/css" href="{% static 'css/pixel.css' %}" rel="stylesheet"/>
+    <link rel="icon" href="{% static 'img/favicon/favicon.ico' %}">
+    <title>{{ post.title }}</title>
 </head>
 
 <body>
@@ -81,11 +83,12 @@
                         <div class="mt-5">
                             <div class="card bg-gray-200 border-gray-300 rounded p-4 mb-4">
                                 <div class="d-flex justify-content-between mb-4">
-                  <span class="font-small"><a href="admin/"><img class="avatar-sm img-fluid rounded-circle me-2"
-                                                                 src="{% static 'img/me1.jpg' %}"
-                                                                 alt="{{ comment.name }}"/>
+                  <span class="font-small"><img class="avatar-sm img-fluid rounded-circle me-2"
+                          {% cycle 'img/avatar/CommentAvatar1.png' 'img/avatar/CommentAvatar2.png' 'img/avatar/CommentAvatar3.png' 'img/avatar/CommentAvatar4.png' 'img/avatar/CommentAvatar5.png' 'img/avatar/CommentAvatar6.png' 'img/avatar/CommentAvatar7.png' 'img/avatar/CommentAvatar8.png' 'img/avatar/CommentAvatar9.png' as n %}
+                                                src="{% static n %}"
+                                                alt="{{ comment.name }}">
                       <sxpan class="fw-bold">{{ comment.name }}</sxpan>
-                    </a><span class="ms-2">{{ comment.created }}</span></span>
+                      </a><span class="ms-2">{{ comment.created }}</span></span>
                                     <div>
                                         <button class="btn btn-link text-danger" aria-label="report button">
                                             <span class="far fa-flag"></span>
@@ -100,13 +103,17 @@
                                 <div class="mt-4 mb-3 d-flex justify-content-between">
                                     <div>
 
-                    <button class="btn btn-link text-danger"><span class="far fa-thumbs-up text-action text-success me-3" data-bs-toggle="tooltip"
-                          data-bs-placement="top" title="Like comment" data-original-title="Like comment"></span></button>
+                                        <button class="btn btn-link text-danger"><span
+                                                class="far fa-thumbs-up text-action text-success me-3"
+                                                data-bs-toggle="tooltip"
+                                                data-bs-placement="top" title="Like comment"
+                                                data-original-title="Like comment"></span></button>
 
-                                        <button class="btn btn-link text-danger"><span class="far fa-thumbs-down text-action text-danger me-3"
-                                              data-bs-toggle="tooltip"
-                                              data-bs-placement="top" title="Dislike comment"
-                                              data-original-title="Dislike comment"></span></button>
+                                        <button class="btn btn-link text-danger"><span
+                                                class="far fa-thumbs-down text-action text-danger me-3"
+                                                data-bs-toggle="tooltip"
+                                                data-bs-placement="top" title="Dislike comment"
+                                                data-original-title="Dislike comment"></span></button>
 
                                     </div>
 
@@ -119,13 +126,14 @@
                                 </div>
 
                                 <div class="collapse" id="replyContainer{{ forloop.counter }}">
-                                    <label class="mb-4 d-none" for="exampleFormControlTextarea10">Replay</label>
-                                    <textarea class="form-control border" id="exampleFormControlTextarea10"
+                                    <label class="mb-4 d-none" for="exampleFormControlTextarea1">Replay</label>
+                                    <textarea class="form-control border" id="exampleFormControlTextarea1"
                                               placeholder="Reply to {{ comment.name }}" rows="6"
-                                              data-bind-characters-target="#charactersRemainingReply"
+                                              data-bind-characters-target="#charactersRemainingReply{{ forloop.counter }}"
                                               maxlength="1000"></textarea>
                                     <div class="d-flex justify-content-between mt-3">
-                                        <small class="fw-light"><span id="charactersRemainingReply"></span>
+                                        <small class="fw-light"><span
+                                                id="charactersRemainingReply{{ forloop.counter }}"></span>
                                             characters remaining</small>
                                         <button class="btn btn-primary btn-sm animate-up-2">
                                             Send
