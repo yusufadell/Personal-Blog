@@ -5,66 +5,66 @@
 
 <head>
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-          integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-    <link type="text/css" href="{% static 'css/pixel.css' %}" rel="stylesheet"/>
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link type="text/css" href="{% static 'css/pixel.css' %}" rel="stylesheet" />
     <link rel="icon" href="{% static 'img/favicon/favicon.ico' %}">
     <title>{{ post.title }}</title>
 </head>
 
 <body>
 
-<main>
-    <section class="section-header pb-5 pb-sm-7 bg-primary text-white">
+    <main>
+        <section class="section-header pb-5 pb-sm-7 bg-primary text-white">
 
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-12 col-lg-10 text-center">
-                    <div class="mb-4">
-                        {% for tag in post.tags.all %}
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-lg-10 text-center">
+                        <div class="mb-4">
+                            {% for tag in post.tags.all %}
                             <a href="{% url 'blog:post_list_by_tag' tag.slug %}"
-                               class="badge {% cycle 'bg-success' 'bg-warning' 'bg-orange' %} text-uppercase me-2 px-3">{{ tag.name }}</a>
+                                class="badge {% cycle 'bg-success' 'bg-warning' 'bg-orange' %} text-uppercase me-2 px-3">{{ tag.name }}</a>
                             </a>
                             {% if not forloop.last %}{% endif %}
-                        {% endfor %}
+                            {% endfor %}
 
-                    </div>
-                    <h1 class="display-3 mb-4 px-lg-5">
-                        {{ post.title }}
-                    </h1>
-                    <div class="post-meta">
-                        <span class="fw-bold me-3">{{ post.author }}</span>
-                        <span class="post-date me-3">{{ post.publish|date }}</span>
-                        <span class="fw-bold" id="time">7 min read</span>
+                        </div>
+                        <h1 class="display-3 mb-4 px-lg-5">
+                            {{ post.title }}
+                        </h1>
+                        <div class="post-meta">
+                            <span class="fw-bold me-3">{{ post.author }}</span>
+                            <span class="post-date me-3">{{ post.publish|date }}</span>
+                            <span class="fw-bold" id="time">7 min read</span>
+                        </div>
                     </div>
                 </div>
             </div>
+        </section>
+        <div class="section section-sm bg-white pt-5 pt-lg-6 text-black">
+            <article class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-lg-8" id="article">
+                        {{ post.body|markdown }}
+
+            </article>
         </div>
-    </section>
-    <div class="section section-sm bg-white pt-5 pt-lg-6 text-black">
-        <article class="container">
-            <div class="row justify-content-center">
-                <div class="col-12 col-lg-8" id="article">
-                    {{ post.body|markdown }}
 
-        </article>
-    </div>
+        <div class="section section-md bg-white text-black pt-0 line-bottom-light">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-lg-8">
+                        <div>
+                            <label class="h5 mb-4" for="exampleFormControlTextarea1"><span
+                                    class="badge badge-md bg-primary text-uppercase me-2">
+                                    {% with comments.count as total_comments %}
 
-    <div class="section section-md bg-white text-black pt-0 line-bottom-light">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-12 col-lg-8">
-                    <div>
-                        <label class="h5 mb-4" for="exampleFormControlTextarea1"><span
-                                class="badge badge-md bg-primary text-uppercase me-2">
-                  {% with comments.count as total_comments %}
-
-                      {{ total_comments }}
-                      </span>
-                      comment{{ total_comments|pluralize }}{% endwith %}
-                        </label>
-                        {% if new_comment %}
+                                    {{ total_comments }}
+                                </span>
+                                comment{{ total_comments|pluralize }}{% endwith %}
+                            </label>
+                            {% if new_comment %}
                             <p class="display-3 mb-4 px-lg-5">Your comment has been added.</p>
-                        {% else %}
+                            {% else %}
                             <form method="post">
                                 {{ comment_form.as_p }}
                                 {% csrf_token %}
@@ -75,20 +75,20 @@
                                         <input class="btn btn-primary animate-up-2" type="submit" value="Add Comment">
                                     </button>
                             </form>
-                        {% endif %}
+                            {% endif %}
 
-                    </div>
-                    {% for comment in comments %}
+                        </div>
+                        {% for comment in comments %}
 
                         <div class="mt-5">
                             <div class="card bg-gray-200 border-gray-300 rounded p-4 mb-4">
                                 <div class="d-flex justify-content-between mb-4">
-                  <span class="font-small"><img class="avatar-sm img-fluid rounded-circle me-2"
-                          {% cycle 'img/avatar/CommentAvatar1.png' 'img/avatar/CommentAvatar2.png' 'img/avatar/CommentAvatar3.png' 'img/avatar/CommentAvatar4.png' 'img/avatar/CommentAvatar5.png' 'img/avatar/CommentAvatar6.png' 'img/avatar/CommentAvatar7.png' 'img/avatar/CommentAvatar8.png' 'img/avatar/CommentAvatar9.png' as n %}
-                                                src="{% static n %}"
-                                                alt="{{ comment.name }}">
-                      <sxpan class="fw-bold">{{ comment.name }}</sxpan>
-                      </a><span class="ms-2">{{ comment.created }}</span></span>
+                                    <span class="font-small"><img class="avatar-sm img-fluid rounded-circle me-2"
+                                            {% cycle 'img/avatar/CommentAvatar1.png' 'img/avatar/CommentAvatar2.png' 'img/avatar/CommentAvatar3.png' 'img/avatar/CommentAvatar4.png' 'img/avatar/CommentAvatar5.png' 'img/avatar/CommentAvatar6.png' 'img/avatar/CommentAvatar7.png' 'img/avatar/CommentAvatar8.png' 'img/avatar/CommentAvatar9.png' as n %}
+                                            src="{% static n %}" alt="{{ comment.name }}">
+                                        <sxpan class="fw-bold">{{ comment.name }}</sxpan>
+                                        </a><span class="ms-2">{{ comment.created }}</span>
+                                    </span>
                                     <div>
                                         <button class="btn btn-link text-danger" aria-label="report button">
                                             <span class="far fa-flag"></span>
@@ -105,21 +105,19 @@
 
                                         <button class="btn btn-link text-danger"><span
                                                 class="far fa-thumbs-up text-action text-success me-3"
-                                                data-bs-toggle="tooltip"
-                                                data-bs-placement="top" title="Like comment"
+                                                data-bs-toggle="tooltip" data-bs-placement="top" title="Like comment"
                                                 data-original-title="Like comment"></span></button>
 
                                         <button class="btn btn-link text-danger"><span
                                                 class="far fa-thumbs-down text-action text-danger me-3"
-                                                data-bs-toggle="tooltip"
-                                                data-bs-placement="top" title="Dislike comment"
+                                                data-bs-toggle="tooltip" data-bs-placement="top" title="Dislike comment"
                                                 data-original-title="Dislike comment"></span></button>
 
                                     </div>
 
                                     <a class="text-action fw-light font-small" data-bs-toggle="collapse" role="button"
-                                       href="#replyContainer{{ forloop.counter }}" aria-expanded="false"
-                                       aria-controls="replyContainer{{ forloop.counter }}"><span
+                                        href="#replyContainer{{ forloop.counter }}" aria-expanded="false"
+                                        aria-controls="replyContainer{{ forloop.counter }}"><span
                                             class="fas fa-reply me-2"></span>
                                         Reply</a>
 
@@ -128,9 +126,9 @@
                                 <div class="collapse" id="replyContainer{{ forloop.counter }}">
                                     <label class="mb-4 d-none" for="exampleFormControlTextarea1">Replay</label>
                                     <textarea class="form-control border" id="exampleFormControlTextarea1"
-                                              placeholder="Reply to {{ comment.name }}" rows="6"
-                                              data-bind-characters-target="#charactersRemainingReply{{ forloop.counter }}"
-                                              maxlength="1000"></textarea>
+                                        placeholder="Reply to {{ comment.name }}" rows="6"
+                                        data-bind-characters-target="#charactersRemainingReply{{ forloop.counter }}"
+                                        maxlength="1000"></textarea>
                                     <div class="d-flex justify-content-between mt-3">
                                         <small class="fw-light"><span
                                                 id="charactersRemainingReply{{ forloop.counter }}"></span>
@@ -147,17 +145,17 @@
                         {% empty %}
                         <hr>
                         <p class="display-3 mb-4 px-lg-5">There are no comments yet.</p>
-                    {% endfor %}
+                        {% endfor %}
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    </div>
+        </div>
 
-</main>
+    </main>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
-<script src="{% static 'js/pixel.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+    <script src="{% static 'js/pixel.js' %}"></script>
 </body>
 
 </html>
