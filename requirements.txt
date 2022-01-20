@@ -23,6 +23,7 @@ wrapt==1.13.3
 python-dotenv
 django-cms
 django-sekizai
+djangocms_text_ckeditor
 django-filer
 djangocms-link
 djangocms-file
