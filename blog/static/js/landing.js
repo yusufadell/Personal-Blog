@@ -10,13 +10,13 @@
         $inner = $('.inner'),
         client = (function () {
             var o = {
-                    browser: 'other',
-                    browserVersion: 0,
-                    os: 'other',
-                    osVersion: 0,
-                    mobile: false,
-                    canUse: null
-                },
+                browser: 'other',
+                browserVersion: 0,
+                os: 'other',
+                osVersion: 0,
+                mobile: false,
+                canUse: null
+            },
                 ua = navigator.userAgent,
                 a, i;
             a = [
@@ -60,8 +60,8 @@
             }
             if (o.os == 'mac' && ('ontouchstart' in window) && ((screen.width == 1024 && screen
                 .height == 1366) || (screen.width == 834 && screen.height == 1112) || (screen
-                .width == 810 && screen.height == 1080) || (screen.width == 768 && screen
-                .height == 1024))) o.os = 'ios';
+                    .width == 810 && screen.height == 1080) || (screen.width == 768 && screen
+                        .height == 1024))) o.os = 'ios';
             o.mobile = (o.os == 'android' || o.os == 'ios');
             var _canUse = document.createElement('div');
             o.canUse = function (p) {
@@ -380,8 +380,8 @@
                 );
                 if (x.classList.contains('full') && (x.parentNode && x.parentNode.classList.contains(
                     'full')) && (x.parentNode.parentNode && x.parentNode.parentNode.parentNode && x
-                    .parentNode.parentNode.parentNode.classList.contains('container')) && x
-                    .parentNode.children.length == 1) {
+                        .parentNode.parentNode.parentNode.classList.contains('container')) && x
+                            .parentNode.children.length == 1) {
                     (function (x, w) {
                         var p = x.parentNode.parentNode,
                             f = function () {
@@ -596,19 +596,19 @@
                 delay: 7000,
             },
             images: [{
-                src: '../img/landing/bg-1.jpg',
+                src: 'https://images.pexels.com/photos/10198426/pexels-photo-10198426.jpeg?cs=srgb&dl=pexels-%D0%B5%D0%B2%D0%B3%D0%B5%D0%BD%D0%B8%D1%8F-%D0%B5%D0%B3%D0%BE%D1%80%D0%BE%D0%B2%D0%B0-10198426.jpg',
                 position: 'center',
                 motion: 'down',
                 speed: 2,
                 caption: 'Untitled',
             }, {
-                src: '../img/landing/bg-2.jpg',
+                src: 'https://images.pexels.com/photos/10198426/pexels-photo-10198426.jpeg?cs=srgb&dl=pexels-%D0%B5%D0%B2%D0%B3%D0%B5%D0%BD%D0%B8%D1%8F-%D0%B5%D0%B3%D0%BE%D1%80%D0%BE%D0%B2%D0%B0-10198426.jpg',
                 position: 'center',
                 motion: 'right',
                 speed: 2,
                 caption: 'Untitled',
             }, {
-                src: '../img/landing/bg-3.jpg',
+                src: 'https://images.pexels.com/photos/10198426/pexels-photo-10198426.jpeg?cs=srgb&dl=pexels-%D0%B5%D0%B2%D0%B3%D0%B5%D0%BD%D0%B8%D1%8F-%D0%B5%D0%B3%D0%BE%D1%80%D0%BE%D0%B2%D0%B0-10198426.jpg',
                 position: 'center',
                 motion: 'left',
                 speed: 2,
