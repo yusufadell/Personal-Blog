@@ -14,7 +14,6 @@ sitemaps = {"posts": PostSitemap}
 urlpatterns = [
     path("admin/", admin.site.urls),
     # cards in website index
-    path("", views.index),
     path('cms/', include('cms.urls')),
     path("blog/", include("blog.urls", namespace="blog")),
     path(

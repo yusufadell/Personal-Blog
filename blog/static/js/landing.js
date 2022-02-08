@@ -596,19 +596,19 @@
                 delay: 7000,
             },
             images: [{
-                src: 'https://images.pexels.com/photos/10198426/pexels-photo-10198426.jpeg?cs=srgb&dl=pexels-%D0%B5%D0%B2%D0%B3%D0%B5%D0%BD%D0%B8%D1%8F-%D0%B5%D0%B3%D0%BE%D1%80%D0%BE%D0%B2%D0%B0-10198426.jpg',
+                src: "",
                 position: 'center',
                 motion: 'down',
                 speed: 2,
                 caption: 'Untitled',
             }, {
-                src: 'https://images.pexels.com/photos/10198426/pexels-photo-10198426.jpeg?cs=srgb&dl=pexels-%D0%B5%D0%B2%D0%B3%D0%B5%D0%BD%D0%B8%D1%8F-%D0%B5%D0%B3%D0%BE%D1%80%D0%BE%D0%B2%D0%B0-10198426.jpg',
+                src: "",
                 position: 'center',
                 motion: 'right',
                 speed: 2,
                 caption: 'Untitled',
             }, {
-                src: 'https://images.pexels.com/photos/10198426/pexels-photo-10198426.jpeg?cs=srgb&dl=pexels-%D0%B5%D0%B2%D0%B3%D0%B5%D0%BD%D0%B8%D1%8F-%D0%B5%D0%B3%D0%BE%D1%80%D0%BE%D0%B2%D0%B0-10198426.jpg',
+                src: "",
                 position: 'center',
                 motion: 'left',
                 speed: 2,
