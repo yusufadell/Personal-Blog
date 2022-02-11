@@ -1,7 +1,7 @@
 asgiref==3.4.1
 astroid==2.8.4
 dj-database-url==0.5.0
-Django==3.2.11
+Django==3.2.12
 django-heroku==0.3.1
 django-taggit==1.5.1
 djangorestframework==3.12.4
