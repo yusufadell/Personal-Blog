@@ -17,7 +17,7 @@
 
 # Personal-Blog
 
-My Blog site in Django
+Django blog app with features of a standard blogging platform, Comment system and tagging functionality, System to share your site's content by email and a custom sitemap and feed for blog posts.
 
 ## Project Preview
 
